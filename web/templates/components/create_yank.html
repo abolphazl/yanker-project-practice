@@ -1,0 +1,22 @@
+
+<div class="bg-stone-800">
+    <div class="w-full text-2xl capitalize bg-stone-200 text-stone-900 p-1 px-2">create yank</div>
+    <div class="p-2">
+        <form method="POST" action="{{ url_for('main.create_yank') }}">
+            <input class="rounded-none w-full h-9 p-2 text-xl lowercase bg-stone-800 border border-stone-500 hover:border-stone-400 text-green-500" type="text" name="imdb_id" placeholder="tt1548765" >
+        </form>
+        <div class="mt-2 flex items-center">
+            <div class="text-sm">
+                {% with messages = get_flashed_messages() %}
+                    {% if messages %}
+                        {% for message in messages %}
+                            <span style="font-family: consolas;">{{ message }}</span>
+                        {% endfor %}
+                    {% else %}
+                        <span style="font-family: consolas;">Enter IMDB_ID</span>
+                    {% endif %}
+                {% endwith %}
+            </div>
+        </div>
+    </div>
+</div>

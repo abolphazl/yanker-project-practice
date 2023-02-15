@@ -1,0 +1,13 @@
+<!doctype html>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="{{ url_for('static', filename='css/output.css') }}">
+
+<main class="robot-slab min-h-screen bg-stone-900 text-stone-200 p-2">
+    <div class="container mx-auto">
+        <!-- <div class="invisible sm:visible sm:col-span-1 md:col-span-2 lg:col-span-3"></div> -->
+        <!-- <div class="col-span-12 sm:col-span-10 md:col-span-8 lg:col-span-6"> -->
+        {% block content %}{% endblock %}
+        <!-- </div> -->
+        <!-- <div class="invisible sm:visible sm:col-span-1 md:col-span-2 lg:col-span-3"></div> -->
+    </div>
+</main>

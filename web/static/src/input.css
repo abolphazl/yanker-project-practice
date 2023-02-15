@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+body {
+    font-family: 'Roboto Slab', serif;
+}
+
+textarea:focus, input:focus{
+    outline: none !important;
+}
+
+textarea::-webkit-input-placeholder, input::-webkit-input-placeholder {
+    opacity: 1;
+}
+
+textarea:focus::-webkit-input-placeholder, input:focus::-webkit-input-placeholder {
+    opacity: .4;
+}
+
+.wide {
+    width: 280px;
+}

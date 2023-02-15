@@ -1,0 +1,21 @@
+<div class="bg-stone-800">
+    <div class="w-full text-2xl capitalize bg-stone-200 text-stone-900 p-1 px-2">search yank</div>
+    <div class="p-2">
+        <form method="POST" action="{{ url_for('main.search') }}">
+            <input
+                class="rounded-none w-full h-9 p-2 text-xl capitalize bg-stone-800 border border-stone-500 hover:border-stone-400"
+                type="text" name="query" placeholder="Yank name...">
+        </form>
+    </div>
+    <div class="p-2">
+        {% if results %}
+        <ol class="grid gap-y-1">
+            {% for result in results %}
+            <li>
+                <a class="h-10 border border-stone-500 bg-stone-900 flex items-center px-2" href="/yank/{{ result['id'] }}">{{ result['title'] }}</a>
+            </li>
+            {% endfor %}
+        </ol>
+        {% endif %}
+    </div>
+</div>

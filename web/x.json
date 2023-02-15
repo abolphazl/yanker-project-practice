@@ -1,0 +1,50 @@
+{
+    "id": "tt14641098",
+    "contentType": "TVSeries",
+    "title": "Vanitas no Carte",
+    "image": "https://m.media-amazon.com/images/M/MV5BYzM4ODUyNzItMjM0NC00MjVlLWFhZWMtMmFlNGFiYTQxZmVkXkEyXkFqcGdeQXVyMzgxODM4NjM@._V1_.jpg",
+    "plot": "A human wields a magic book that can cure vampires of their bloodlust, and sets out to find vampires to cure with the book.",
+    "rating": {
+        "count": 1994,
+        "star": 7.6
+    },
+    "genre": [
+        "Animation",
+        "Fantasy",
+        "Horror"
+    ],
+    "seasons": [
+        {
+            "id": "1",
+            "name": "Season 1",
+            "episodes": [
+                {
+                    "idx": 1,
+                    "no": "S1, Ep1",
+                    "title": "In the Event of Rusty Hopes",
+                    "image": "https://m.media-amazon.com/images/M/MV5BM2YxMjQ4Y2ItZmE0YS00YTIxLWJkY2UtMDgyMmNiMGUwOThmXkEyXkFqcGdeQXVyODMyNTM0MjM@._V1_UY126_UX224_AL_.jpg",
+                    "image_large": "https://m.media-amazon.com/images/M/MV5BM2YxMjQ4Y2ItZmE0YS00YTIxLWJkY2UtMDgyMmNiMGUwOThmXkEyXkFqcGdeQXVyODMyNTM0MjM@.jpg",
+                    "plot": "Noe meets Vanitas for the first time on an airship to Paris, as he deals with a vampire consumed by bloodlust.",
+                    "publishedDate": "2 Jul. 2021",
+                    "rating": {
+                        "count": 207,
+                        "star": 7.5
+                    }
+                },
+                {
+                    "idx": 2,
+                    "no": "S1, Ep2",
+                    "title": "In the City of Flowers",
+                    "image": "https://m.media-amazon.com/images/M/MV5BYTA3OTczNjMtMGRlOS00Yzc4LThmZmYtYWNlZmU5ZmEzODczXkEyXkFqcGdeQXVyOTc4OTAwMjU@._V1_UY126_UX224_AL_.jpg",
+                    "image_large": "https://m.media-amazon.com/images/M/MV5BYTA3OTczNjMtMGRlOS00Yzc4LThmZmYtYWNlZmU5ZmEzODczXkEyXkFqcGdeQXVyOTc4OTAwMjU@.jpg",
+                    "plot": "While meeting with Paris's vampire leader Lord Ruthven, Noe and Vanitas are attacked by another vampire, and Ruthven's nephew Luca and his beautiful chevalier Jeanne.",
+                    "publishedDate": "9 Jul. 2021",
+                    "rating": {
+                        "count": 154,
+                        "star": 7.5
+                    }
+                }
+            ]
+        }
+    ]
+}

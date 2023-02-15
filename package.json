@@ -1,0 +1,18 @@
+{
+  "name": "yanker-project",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/abolphazl/flask-basic.git",
+  "author": "abolphazl <gorgdis@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "bash dev.sh",
+    "db-init": "flask --app web db init",
+    "db-migrate": "flask --app web db migrate",
+    "db-upgrade": "flask --app web db upgrade",
+    "db-stamp": "flask --app web db stamp head"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.2.6"
+  }
+}

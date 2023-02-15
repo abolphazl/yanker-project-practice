@@ -1,0 +1,35 @@
+<div class="bg-stone-800">
+    <div class="w-full text-2xl capitalize bg-stone-200 text-stone-900 p-1 px-2">Status</div>
+    <div class="p-2 grid grid-cols-1 gap-y-1">
+        <table class="border-collapse border border-stone-200">
+            <thead>
+                <tr>
+                    <th class="border border-stone-200 ">Key</th>
+                    <th class="border border-stone-200 ">Value</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="text-center">
+                    <td class="border border-stone-200">ID</td>
+                    <td class="border border-stone-200">{{ result['id'] }}</td>
+                </tr>
+                <tr class="text-center">
+                    <td class="border border-stone-200">Title</td>
+                    <td class="border border-stone-200">{{ result['title'] }}</td>
+                </tr>
+                <tr class="text-center">
+                    <td class="border border-stone-200">Downloads</td>
+                    <td class="border border-stone-200">{{ result['downloads'] | default("?") }}</td>
+                </tr>
+                <tr class="text-center">
+                    <td class="border border-stone-200">Likes</td>
+                    <td class="border border-stone-200">{{ result['likes'] | default("?") }}</td>
+                </tr>
+                <tr class="text-center">
+                    <td class="border border-stone-200">Last Update</td>
+                    <td class="border border-stone-200">{{ result['timestamp'] | default("?") }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
