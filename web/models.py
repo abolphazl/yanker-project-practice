@@ -1,4 +1,6 @@
 from web import db
+import datetime
+
 
 class User(db.Model):
     id = db.Column(db.Integer, primary_key =True)
@@ -15,6 +17,15 @@ class Todo(db.Model):
 
 
 # Series Tables
+class File(db.Model):
+    __tablename__ = 'file'
+    id = db.Column(db.Integer, primary_key=True)
+    message_id = db.Column(db.Integer, nullable=False)
+    quality = db.Column(db.String, nullable=False)
+    mode = db.Column(db.Integer, nullable=False, default=0)
+    episode_id = db.Column(db.Integer, db.ForeignKey('episode.id'))
+
+
 class Episode(db.Model):
     __tablename__ = "episode"
     id = db.Column(db.Integer, primary_key=True)
@@ -26,7 +37,7 @@ class Episode(db.Model):
     published_date = db.Column(db.String, nullable=False)
     rating_count = db.Column(db.Integer, nullable=False)
     rating_star = db.Column(db.Float, nullable=False)
-    file_id = db.Column(db.Integer, nullable=True)
+    files = db.relationship('File', backref='episode')
     session_id = db.Column(db.Integer, db.ForeignKey('season.id'))
 
 class Season(db.Model):
@@ -46,7 +57,7 @@ class Series(db.Model):
     rating_count = db.Column(db.Integer, nullable=False)
     rating_star = db.Column(db.Float, nullable=False)
     genres = db.Column(db.String, nullable=False)
-    timestamp = db.Column(db.DateTime, default=db.func.current_timestamp(), nullable=True)
+    last_update = db.Column(db.String, default=str(datetime.datetime.now()), nullable=True)
     seasons = db.relationship('Season', backref='series')
 
 

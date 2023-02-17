@@ -1,8 +1,8 @@
-<div class="bg-stone-800">
-    <div class="w-full text-2xl capitalize bg-stone-200 text-stone-900 p-1 px-2">todo list</div>
-    <div class="p-2">
+<div>
+    <div class="w-full text-2xl capitalize bg-neutral text-neutral-content rounded-t-md p-1 px-2">todo list</div>
+    <div class="p-2 bg-base-300 rounded-b-md">
         <form method="POST" action="{{ url_for('main.create_todo') }}">
-            <input class="rounded-none w-full h-9 p-2 text-xl capitalize bg-stone-800 border border-stone-500 hover:border-stone-400" type="text" name="message" placeholder="Todo..." >
+            <input class="input input-bordered w-full h-9 p-2 text-xl capitalize" type="text" name="message" placeholder="Todo..." >
         </form>
 
         {% if todo_list %}
@@ -10,7 +10,7 @@
             <ol class="list-decimal	list-inside">
                 {% for todo in todo_list %}
                 <form method="POST" action="{{ url_for('main.delete_todo', id=todo['id']) }}" class="text-md capitalize opacity-90">
-                    <li><input class="hover:line-through cursor-pointer capitalize" type="submit" value="{{ todo['message'] }}"></li>
+                    <li><input class="hover:line-through hover:text-red-400 cursor-pointer capitalize" type="submit" value="{{ todo['message'] }}"></li>
                 </form>
                 {% endfor %}
             </ol>

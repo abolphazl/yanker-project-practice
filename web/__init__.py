@@ -2,6 +2,7 @@ from flask import Flask, render_template
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 
+
 import os
 
 db = SQLAlchemy()
@@ -21,6 +22,10 @@ def create_app():
 
     from web import models
 
+
+    @app.route("/test")
+    def test():
+        return render_template("alter/login.html")
 
     # apply the blueprints to the app
     from web.apps import main, auth, yank

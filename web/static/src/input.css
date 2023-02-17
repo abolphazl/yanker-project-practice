@@ -3,23 +3,41 @@
 @tailwind components;
 @tailwind utilities;
 
-
-body {
-    font-family: 'Roboto Slab', serif;
+@font-face {
+    font-family: product-sans-bold;
+    src: url(../src/fonts/product-sans-bold.ttf);
 }
 
-textarea:focus, input:focus{
+@font-face {
+    font-family: product-sans-regular;
+    src: url(../src/fonts/product-sans-regular.ttf);
+}
+
+.f-bold {
+    font-family: 'product-sans-bold' !important;
+}
+
+body {
+    font-family: 'product-sans-regular', serif;
+}
+
+textarea:focus,
+input:focus {
     outline: none !important;
 }
 
-textarea::-webkit-input-placeholder, input::-webkit-input-placeholder {
-    opacity: 1;
+textarea::-webkit-input-placeholder,
+input::-webkit-input-placeholder {
+    opacity: .7 !important;
+    transition: .1s;
 }
 
-textarea:focus::-webkit-input-placeholder, input:focus::-webkit-input-placeholder {
-    opacity: .4;
+textarea:focus::-webkit-input-placeholder,
+input:focus::-webkit-input-placeholder {
+    opacity: .3 !important;
 }
 
 .wide {
     width: 280px;
 }
+

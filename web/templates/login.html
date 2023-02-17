@@ -1,9 +1,9 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<form method="POST" class="min-h-screen grid grid-cols-1 place-content-center text-center gap-1">
-    <div><input class="wide rounded-none h-9 p-2 border bg-stone-800 border-stone-500 hover:border-stone-400" type="text" name="username" placeholder="Username"></div>
-    <div><input class="wide rounded-none h-9 p-2 border bg-stone-800 border-stone-500 hover:border-stone-400" type="password" name="password" placeholder="Password"></div>
-    <div><button type="submit" class="wide rounded-none bg-stone-200 text-stone-900 hover:bg-stone-300 h-10">Login</button></div>
+<form method="POST" class="min-h-screen grid grid-cols-1 place-content-center text-center gap-y-1">
+    <div><input name="username" type="text" class="input input-bordered wide bg-base-300" placeholder="Username" required></div>
+    <div><input name="password" type="password" class="input input-bordered wide bg-base-300" placeholder="Password" required></div>
+    <div><button type="submit" class="btn btn-lg btn-primary wide">login</button></div>
 </form>
 {% endblock %}

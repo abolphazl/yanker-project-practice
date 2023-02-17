@@ -1,7 +1,70 @@
-<div class="bg-stone-800">
-    <div class="w-full text-2xl capitalize bg-stone-200 text-stone-900 p-1 px-2">Episodes</div>
+<div class="rounded-md">
+    <div class="w-full text-2xl capitalize bg-neutral text-neutral-content rounded-t-md p-1 px-2">File manager</div>
 
-    <div class="p-2">
-        list
+    <div class="p-2 grid grid-cols-2 gap-2 bg-base-200 rounded-b-md">
+
+
+
+        {% if result.seasons %}
+        {% for season in result.seasons %}
+        {% for episode in season.episodes %}
+        <div id="{{ episode.id }}" class="ep card z-0" style="background-image: url('{{ episode.image }}'); background-size: cover;">
+            <div class="card-body items-center rounded-md" style="backdrop-filter: blur(5px); color: #ffff">
+                <h2 class="card-title text-3xl">{{ episode.no }}</h2>
+                {% if episode.files %}
+                <ol class="f-bold">
+                    {% for file in episode.files %}
+                        <li>{{ file.quality }}p - {{ file.message_id }} - {{ file.mode }}</li>
+                    {% endfor %}
+                </ol>
+                {% endif %}
+                <div class="card-actions justify-end w-full h-full items-end">
+                    <a href="#my-modal-2" episode_id='{{episode.id}}' class="carrier btn glass w-full btn-sm f-bold">Add</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+        {% endfor %}
+        {% else %}
+        <div>Not exists!</div>
+        {% endif %}
+
+
+
     </div>
+
+    <!-- <div class="p-2 grid grid-cols-2 gap-2 bg-base-200">
+        {% if result.seasons %}
+        {% for season in result.seasons %}
+        {% for episode in season.episodes %}
+        <div class="w-full border border-stone-500 p-2">
+            <div class="text-start text-2xl">{{ episode['no'] }}</div>
+            {% if episode.files %}
+            <div class="text-sm">
+                <ol>
+                    {% for file in episode.files %}
+                    <li>{{ file['quality'] }}-{{ file['mode'] }}</li>
+                    {% endfor %}
+                </ol>
+            </div>
+            {% else %}
+            <div class="opacity-50 my-1">No files!</div>
+            {% endif %}
+            <form method="POST" action="{{url_for('yank.insert_file', episode_id=episode.id)}}"
+                class="grid grid-cols-3 gap-x-1 mt-1">
+                <input name="quality" class="w-full border border-stone-300 bg-stone-900 text-stone-300 px-1"
+                    placeholder="QUALITY" type="text" required>
+                <input name="mid" class="w-full border border-stone-300 bg-stone-900 text-stone-300 px-1"
+                    placeholder="MID" type="text" required>
+                <input name="mode" class="w-full border border-stone-300 bg-stone-900 text-stone-300 px-1"
+                    placeholder="MODE" type="text">
+                <button type="submit" class="col-span-3 mt-2 py-1 bg-stone-200 text-stone-900">Insert</button>
+            </form>
+        </div>
+        {% endfor %}
+        {% endfor %}
+        {% else %}
+        <div>Not exists!</div>
+        {% endif %}
+    </div> -->
 </div>

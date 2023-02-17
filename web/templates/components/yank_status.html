@@ -1,35 +1,71 @@
-<div class="bg-stone-800">
-    <div class="w-full text-2xl capitalize bg-stone-200 text-stone-900 p-1 px-2">Status</div>
-    <div class="p-2 grid grid-cols-1 gap-y-1">
-        <table class="border-collapse border border-stone-200">
-            <thead>
-                <tr>
-                    <th class="border border-stone-200 ">Key</th>
-                    <th class="border border-stone-200 ">Value</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr class="text-center">
-                    <td class="border border-stone-200">ID</td>
-                    <td class="border border-stone-200">{{ result['id'] }}</td>
-                </tr>
-                <tr class="text-center">
-                    <td class="border border-stone-200">Title</td>
-                    <td class="border border-stone-200">{{ result['title'] }}</td>
-                </tr>
-                <tr class="text-center">
-                    <td class="border border-stone-200">Downloads</td>
-                    <td class="border border-stone-200">{{ result['downloads'] | default("?") }}</td>
-                </tr>
-                <tr class="text-center">
-                    <td class="border border-stone-200">Likes</td>
-                    <td class="border border-stone-200">{{ result['likes'] | default("?") }}</td>
-                </tr>
-                <tr class="text-center">
-                    <td class="border border-stone-200">Last Update</td>
-                    <td class="border border-stone-200">{{ result['timestamp'] | default("?") }}</td>
-                </tr>
-            </tbody>
-        </table>
+<div>
+    <div class="w-full text-2xl capitalize bg-neutral text-neutral-content rounded-t-md p-1 px-2">Status</div>
+
+    <div class="p-3 bg-base-200">
+        <div class="mb-2">
+            <div class="text-lg">Click the below button to update these:</div>
+            <ol class="f-bold list-disc list-inside">
+                <li>Rating options</li>
+                <li>Seasons</li>
+                <li>Episodes</li>
+            </ol>
+        </div>
+        <form method="POST" action="{{ url_for('yank.yank_update', id=result.id) }}">
+            <button type="submit" class="w-full h-10 f-bold btn btn-sm btn-info normal-case">Update</button>
+        </form>
     </div>
+
+    <div class="p-3 grid grid-cols-1 gap-y-1 bg-base-200">
+        <div class="stats stats-vertical lg:stats-horizontal shadow">
+
+            <div class="stat">
+                <div class="stat-title">Downloads</div>
+                <div class="stat-value">???</div>
+                <div class="stat-desc">???</div>
+            </div>
+
+            <div class="stat">
+                <div class="stat-title">Likes</div>
+                <div class="stat-value">???</div>
+                <div class="stat-desc">???</div>
+            </div>
+
+            <div class="stat">
+                <div class="stat-title">Last Update</div>
+                <div class="stat-value">{% if result.last_update %}{{ result.last_update[0:11] }}{% else %}<span>Never</span>{% endif %}</div>
+                <div class="stat-desc">{% if result.last_update %}{{ result.last_update[10:] }}{% else %}<span>...</span>{% endif %}</div>
+            </div>
+
+        </div>
+        <div class="stats stats-vertical lg:stats-horizontal shadow">
+
+            <div class="stat">
+                <div class="stat-title">Rating Count</div>
+                <div class="stat-value">{{ result.rating_count }}</div>
+            </div>
+
+            <div class="stat">
+                <div class="stat-title">Rating Star</div>
+                <div class="stat-value">{{ result.rating_star }}</div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="p-3 bg-base-200">
+        <div>Complited (70%)</div>
+        <progress class="progress progress-info border border-blue-500 w-full" value="70" max="100"></progress>
+    </div>
+
+    <div class="p-3 bg-base-200 rounded-b-md">
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        {% for message in messages %}
+        <span class="text-yellow-500" style="font-family: consolas;">{{ message }}</span>
+        {% endfor %}
+        {% endif %}
+        {% endwith %}
+    </div>
+
+
 </div>
